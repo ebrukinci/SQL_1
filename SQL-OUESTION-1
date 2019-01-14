@@ -1,0 +1,6 @@
+SELECT COUNT(userId) 
+FROM (       
+SELECT i_user_login_logs.userId, Count(*) AS [Count]
+FROM i_user_login_logs
+GROUP BY i_user_login_logs.userId      
+HAVING (((Count(*))>3)) );
